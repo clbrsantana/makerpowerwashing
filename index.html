@@ -6,6 +6,8 @@
 	<title>Testing</title>
 	<link rel="stylesheet" href="styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600,700&display=swap" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
 </head>
 <body>
 	<main>
@@ -30,7 +32,7 @@
 					<th>Number</th>
 				</tr>
 				<tr>
-					<td><input id="quote_date" type="date" class="large"></td>
+					<td><input id="quote_date" type="date" class="large subtle"></td>
 					<td><input type="number" class="subtle fill large"></td>
 				</tr>
 			</table>
@@ -59,6 +61,8 @@
 				<tr>
 					<td class="large">
 						<small>How did your hear about us?</small>
+						<br>
+						<input type="text" class="subtle large fill">
 					</td>
 				</tr>
 			</table>
@@ -256,33 +260,54 @@
 				</tr>
 				<tr>
 					<td class="_A">
-						<span>"A"- </span>
-						<span>% Off</span>
+						<div>
+							<span>"A"- </span>
+							<span><input type="text" class="subtle fill"></span>
+							<span>% Off</span>
+						</div>
 					</td>
 					<td></td>
 					<td class="_B">
-						<span>"B"- </span>
-						<span>% Off</span>
+						<div>
+							<span>"B"- </span>
+							<span><input type="text" class="subtle fill"></span>
+							<span>% Off</span>
+						</div>
 					</td>
 					<td></td>
 					<td class="_C">
-						<span>"C"- </span>
-						<span>% Off</span>
+						<div>
+							<span>"C"- </span>
+							<span><input type="text" class="subtle fill"></span>
+							<span>% Off</span>
+						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="rel large">&nbsp;<span class="plus_tax">+Tax</span></td>
+					<td class="rel large"><input type="text" class="subtle fill large"><span class="plus_tax">+Tax</span></td>
 					<td></td>
-					<td class="rel large">&nbsp;<span class="plus_tax">+Tax</span></td>
+					<td class="rel large"><input type="text" class="subtle fill large"><span class="plus_tax">+Tax</span></td>
 					<td></td>
-					<td class="rel large">&nbsp;<span class="plus_tax">+Tax</span></td>
+					<td class="rel large"><input type="text" class="subtle fill large"><span class="plus_tax">+Tax</span></td>
 				</tr>
 				<tr>
-					<td class="_A _save">Save $</td>
+					<td class="_A _save">
+						<div>
+							Save $ <input type="text" class="subtle fill ">
+						</div>
+					</td>
 					<td></td>
-					<td class="_B _save">Save $</td>
+					<td class="_B _save">
+						<div>
+							Save $ <input type="text" class="subtle fill ">
+						</div>
+					</td>
 					<td></td>
-					<td class="_C _save">Save $</td>
+					<td class="_C _save">
+						<div>
+							Save $ <input type="text" class="subtle fill ">
+						</div>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -290,19 +315,19 @@
 			<table class="totals border">
 				<tr>
 					<td><strong>All Services</strong></td>
-					<td></td>
+					<td><input type="text" class="subtle fill "></td>
 				</tr>
 				<tr>
 					<td><strong>✓</strong></td>
-					<td></td>
+					<td><input type="text" class="subtle fill "></td>
 				</tr>
 				<tr>
 					<td><strong>Discount</strong></td>
-					<td></td>
+					<td><input type="text" class="subtle fill "></td>
 				</tr>
 				<tr class="colored_bg">
 					<td><strong>Total</strong></td>
-					<td class="rel"><span class="plus_tax">+Tax</span></td>
+					<td class="rel"><input type="text" class="subtle fill "><span class="plus_tax">+Tax</span></td>
 				</tr>
 			</table>
 		</div>
@@ -311,10 +336,10 @@
 				<tr>
 					<th>Job Notes / Special Instructions</th>
 				</tr>
-				<tr><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td></tr>
+				<tr><td contenteditable="true">&nbsp;</td></tr>
+				<tr><td contenteditable="true">&nbsp;</td></tr>
+				<tr><td contenteditable="true">&nbsp;</td></tr>
+				<tr><td contenteditable="true">&nbsp;</td></tr>
 			</table>
 		</div>
 		<div class="section-signature">
