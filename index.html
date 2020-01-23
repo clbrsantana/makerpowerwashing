@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0">
@@ -9,6 +10,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 </head>
+
 <body>
 	<main>
 		<div class="section-brand">
@@ -18,13 +20,13 @@
 			<div class="brand-info">
 				<h2>Maker Power Washing LLC</h2>
 				<ul>
-					<li>479-335-5700</li>
 					<li>4257 N Gabel Drive, Suite 3H Fayettville, AR 72703</li>
-					<li>makerpowerwashing.com</li>
+					<li>479-335-5700</li>
+					<li>www.makerpowerwashing.com</li>
 				</ul>
 			</div>
 		</div>
-		<div class="section-quote_heading">
+		<!-- <div class="section-quote_heading">
 			<h1>SERVICE QUOTE</h1>
 			<table class="quote_date_and_number border">
 				<tr>
@@ -36,7 +38,7 @@
 					<td><input type="number" class="subtle fill large"></td>
 				</tr>
 			</table>
-		</div>
+		</div> -->
 		<div class="section-client_info">
 			<table class="client_info border">
 				<tr>
@@ -67,8 +69,11 @@
 				</tr>
 			</table>
 		</div>
+		<div class="section-photo_upload">
+			<input class="photo_upload" type="file" id="photo_upload" onchange="updatePhoto(this);"><label for="photo_upload">Choose a file</label>
+		</div>
 		<div class="section-services_table">
-			<table class="services_table border" >
+			<table class="services_table border">
 				<tr>
 					<th class="_A">A</th>
 					<th class="_B">B</th>
@@ -79,9 +84,9 @@
 					<th class="_check">✓</th>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Roof SoftWash</td>
 					<td class="_notes">
 						<label class="text"><span>Type </span><input type="text"></label>
@@ -93,12 +98,12 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Window Cleaning</td>
 					<td class="_notes">
 						<label class="check"><input type="checkbox"><span>In/Out</span></label>
@@ -116,12 +121,12 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Siding SoftWash</td>
 					<td class="_notes">
 						<label class="text"><span>Type</span><input type="text"></label>
@@ -129,15 +134,15 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Gutter Cleaning - In</td>
 					<td class="_notes">
-						Protection Plan: 
+						Protection Plan:
 						<label class="check"><input type="checkbox"><span>Silver</span></label>
 						<label class="check"><input type="checkbox"><span>Gold</span></label>
 						<label class="check"><input type="checkbox"><span>Diamond</span></label>
@@ -145,12 +150,12 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Gutter Cleaning - Out</td>
 					<td class="_notes">
 						Exterior Stains
@@ -158,12 +163,12 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Deck SoftWash</td>
 					<td class="_notes">
 						<label class="check"><input type="checkbox"><span>Railings</span></label>
@@ -172,12 +177,12 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Pressure Washing <br>(No Asphalt)</td>
 					<td class="_notes">
 						<label class="check"><input type="checkbox"><span>Driveway</span></label>
@@ -185,8 +190,8 @@
 						<label class="check"><input type="checkbox"><span>Public Sideways</span></label>
 						<label class="check">
 							<input type="checkbox"><span>Patio </span></label>
-							<label class="text"><span></span><input type="text" style="width: 1cm;"></label>
-						
+						<label class="text"><span></span><input type="text" style="width: 1cm;"></label>
+
 						<br>
 						<label class="check"><input type="checkbox"><span>Other</span></label>
 						<label class="text"><span></span><input type="text"></label>
@@ -194,62 +199,62 @@
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Water Stain Removal</td>
-					<td class="_notes"></td>
+					<td class="_notes"><input type="text" class="subtle fill left"></td>
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Dryer Vent Cleaning</td>
-					<td class="_notes"></td>
+					<td class="_notes"><input type="text" class="subtle fill left"></td>
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 					<td class="_service_list">Holiday Lighting</td>
-					<td class="_notes"></td>
+					<td class="_notes"><input type="text" class="subtle fill left"></td>
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
-					<td class="_service_list">&nbsp;</td>
-					<td class="_notes"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_service_list"><input type="text" class="subtle fill left"></td>
+					<td class="_notes"><input type="text" class="subtle fill left"></td>
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 				<tr>
-					<td class="_A"></td>
-					<td class="_B"></td>
-					<td class="_C"></td>
-					<td class="_service_list">&nbsp;</td>
-					<td class="_notes"></td>
+					<td class="_A"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_B"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_C"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
+					<td class="_service_list"><input type="text" class="subtle fill left"></td>
+					<td class="_notes"><input type="text" class="subtle fill left"></td>
 					<td class="_amount">
 						<input type="number" class="subtle fill large">
 					</td>
-					<td class="_check"></td>
+					<td class="_check"><label class="big-checkbox"><input type="checkbox"><span></span></label></td>
 				</tr>
 			</table>
 		</div>
@@ -336,10 +341,18 @@
 				<tr>
 					<th>Job Notes / Special Instructions</th>
 				</tr>
-				<tr><td contenteditable="true">&nbsp;</td></tr>
-				<tr><td contenteditable="true">&nbsp;</td></tr>
-				<tr><td contenteditable="true">&nbsp;</td></tr>
-				<tr><td contenteditable="true">&nbsp;</td></tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<div class="section-signature">
@@ -365,10 +378,23 @@
 		<div class="section-endnote"></div>
 	</main>
 	<script>
-		document.addEventListener('DOMContentLoaded', function(){ 
+		document.addEventListener('DOMContentLoaded', function() {
 			var date_field = document.querySelector('#quote_date');
 			date_field.valueAsDate = new Date();
 		}, false);
+
+		function updatePhoto(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					document.querySelector('.photo_upload~label').style.backgroundImage = 'url(' + e.target.result + ')';
+				};
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
 	</script>
 </body>
+
 </html>

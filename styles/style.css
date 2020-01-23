@@ -102,6 +102,7 @@ td._B,
 td._C,
 td._check {
 	width: 0.7cm;
+	position: relative;
 }
 
 ._notes,
@@ -160,12 +161,58 @@ input[type="checkbox"] ~ span::after {
 	visibility: hidden;
 }
 
+input[type="checkbox"]:focus ~ span {
+	opacity: 1;
+	text-decoration: underline;
+}
+
 input[type="checkbox"]:checked ~ span {
 	opacity: 1;
 }
 
 input[type="checkbox"]:checked ~ span::after {
 	visibility: visible;
+}
+
+.big-checkbox{
+	position: absolute;
+	display: flex;
+	
+	align-items: center;
+	justify-content: center;
+	
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.big-checkbox input[type="checkbox"]~span:before {
+	width: 16px;
+	height: 16px;
+	margin-right: 0;
+	border: none;
+	border-radius: 3px;
+	background: none;
+}
+
+.big-checkbox input[type="checkbox"]:focus~span:before,
+.big-checkbox:hover input[type="checkbox"]~span:before {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+td._check .big-checkbox input[type="checkbox"]:focus~span:before,
+td._check .big-checkbox:hover input[type="checkbox"]~span:before {
+	background-color: rgba(125, 195, 255, 0.2);
+}
+
+.big-checkbox input[type="checkbox"]~span:after {
+	top: unset;
+	left: unset;
+	height: 8px;
+	width: 16px;
+	
+	transform: translateY(-18px) rotate(-45deg);
 }
 
 input[type="text"],
@@ -273,10 +320,46 @@ input.fill {
 	width: 100%;
 	text-align: center;
 }
+input.left {
+	text-align: left;
+}
 
 input.large {
 	font-size: 1.2em;
 }
+
+.section-photo_upload {
+	position: relative;
+}
+
+.photo_upload {
+	position: absolute;
+	left: -9999px;
+}
+
+.photo_upload~label {
+	display: flex;
+	
+	align-items: center;
+	justify-content: center;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #e8e8e8;
+	border-radius: 5px;
+	border: 3px dashed rgba(0, 0, 0, 0.24);
+	
+	font-size: 1.2em;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.24);
+	
+	background-size: cover;
+	background-position: center;
+}
+
 
 
 .client_info .row {
@@ -360,9 +443,14 @@ main {
 }
 
 .section-office_use {
-	grid-row: 2;
+	grid-row: 1;
 	grid-column: 4 / 6;
 	align-self: flex-end;
+}
+
+.section-photo_upload {
+	grid-row: 2;
+	grid-column: 4 / 6;
 }
 
 .section-services_table {
@@ -477,3 +565,4 @@ input[type="date"]:before {
 		display: none ;
 	}
 }
+
