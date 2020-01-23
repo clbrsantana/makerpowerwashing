@@ -466,6 +466,7 @@
 		function handleWritingInProgress(event) {
 
 			event.preventDefault();
+			event.stopPropagation();
 
 			if (state.mousedown) {
 				const mousePos = getMosuePositionOnCanvas(event);
