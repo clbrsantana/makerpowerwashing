@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0">
 	<title>Testing</title>
-	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/style.css?v2">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600,700&display=swap" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -353,13 +353,23 @@
 				<tr>
 					<td contenteditable="true">&nbsp;</td>
 				</tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
+				<tr>
+					<td contenteditable="true">&nbsp;</td>
+				</tr>
 			</table>
 		</div>
 		<div class="section-signature">
 			<table class="signature">
 				<tr>
 					<td>Signature</td>
-					<td><span class="fill underline">&nbsp;</span></td>
+					<td class="rel">
+						<canvas id="drawing-area" width="300" height="100"></canvas>
+						<span class="fill underline">&nbsp;</span>
+						<button id="clearButton">Clear</button>
+					</td>
 				</tr>
 				<tr>
 					<td>Service Consultant</td>
@@ -392,6 +402,123 @@
 
 				reader.readAsDataURL(input.files[0]);
 			}
+		}
+
+
+
+
+		// =============
+		// == Globals ==
+		// =============
+		const canvas = document.getElementById('drawing-area');
+		const canvasContext = canvas.getContext('2d');
+		const clearButton = document.getElementById('clearButton');
+		const state = {
+			mousedown: false
+		};
+
+		// ===================
+		// == Configuration ==
+		// ===================
+		const lineWidth = 1.5;
+		const halfLineWidth = lineWidth / 2;
+		const fillStyle = '#333';
+		const strokeStyle = '#333';
+		const shadowColor = '#333';
+		const shadowBlur = 2;
+
+		// =====================
+		// == Event Listeners ==
+		// =====================
+		canvas.addEventListener('mousedown', handleWritingStart);
+		canvas.addEventListener('mousemove', handleWritingInProgress);
+		canvas.addEventListener('mouseup', handleDrawingEnd);
+		canvas.addEventListener('mouseout', handleDrawingEnd);
+
+		canvas.addEventListener('touchstart', handleWritingStart);
+		canvas.addEventListener('touchmove', handleWritingInProgress);
+		canvas.addEventListener('touchend', handleDrawingEnd);
+
+		clearButton.addEventListener('click', handleClearButtonClick);
+
+		// ====================
+		// == Event Handlers ==
+		// ====================
+		function handleWritingStart(event) {
+			event.preventDefault();
+
+			var mousePos = getMosuePositionOnCanvas(event);
+
+			canvasContext.beginPath();
+
+			canvasContext.moveTo(mousePos.x, mousePos.y);
+
+			canvasContext.lineWidth = lineWidth;
+			canvasContext.strokeStyle = strokeStyle;
+			canvasContext.shadowColor = null;
+			canvasContext.shadowBlur = null;
+
+			canvasContext.fill();
+
+			state.mousedown = true;
+		}
+
+		function handleWritingInProgress(event) {
+
+			event.preventDefault();
+
+			if (state.mousedown) {
+				const mousePos = getMosuePositionOnCanvas(event);
+				console.log('asdad');
+				
+				canvasContext.lineTo(mousePos.x, mousePos.y);
+				canvasContext.stroke();
+			}
+		}
+
+		function handleDrawingEnd(event) {
+			event.preventDefault();
+
+			if (state.mousedown) {
+				canvasContext.shadowColor = shadowColor;
+				canvasContext.shadowBlur = shadowBlur;
+
+				canvasContext.stroke();
+			}
+
+			state.mousedown = false;
+		}
+
+		function handleClearButtonClick(event) {
+			event.preventDefault();
+
+			clearCanvas();
+		}
+
+		// ======================
+		// == Helper Functions ==
+		// ======================
+		function getMosuePositionOnCanvas(event) {
+			const clientX = event.clientX || event.touches[0].clientX;
+			const clientY = event.clientY || event.touches[0].clientY;
+			
+			var rect = canvas.getBoundingClientRect(),
+			
+			
+			offsetLeft = rect.left;
+			offsetTop = rect.top;
+			
+			const canvasX = clientX - offsetLeft;
+			const canvasY = clientY - offsetTop;
+
+			return {
+				x: canvasX,
+				y: canvasY
+			};
+		}
+
+		function clearCanvas() {
+			canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 		}
 
 	</script>
